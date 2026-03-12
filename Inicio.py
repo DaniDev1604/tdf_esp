@@ -8,12 +8,12 @@ from nltk.stem import SnowballStemmer
 st.title("🔍 Demo TF-IDF en Español")
 
 # Documentos de ejemplo
-default_docs = """El perro ladra fuerte en el parque.
-El gato maúlla suavemente durante la noche.
-El perro y el gato juegan juntos en el jardín.
-Los niños corren y se divierten en el parque.
-La música suena muy alta en la fiesta.
-Los pájaros cantan hermosas melodías al amanecer."""
+default_docs = """
+Mi novia me dejo por erika.
+porque ella fue su primer amor.
+y su mamà no me queria.
+y su papa me dijo que me odia.
+Si te extraño erika"""
 
 # Stemmer en español
 stemmer = SnowballStemmer("spanish")
@@ -34,30 +34,26 @@ col1, col2 = st.columns([2, 1])
 
 with col1:
     text_input = st.text_area("📝 Documentos (uno por línea):", default_docs, height=150)
-    question = st.text_input("❓ Escribe tu pregunta:", "¿Dónde juegan el perro y el gato?")
+    question = st.text_input("❓ Escribe tu pregunta:", "¿Por quièn me dejo mi novia?")
 
 with col2:
     st.markdown("### 💡 Preguntas sugeridas:")
     
     # NUEVAS preguntas optimizadas para mayor similitud
-    if st.button("¿Dónde juegan el perro y el gato?", use_container_width=True):
-        st.session_state.question = "¿Dónde juegan el perro y el gato?"
-        st.rerun()
-    
-    if st.button("¿Qué hacen los niños en el parque?", use_container_width=True):
-        st.session_state.question = "¿Qué hacen los niños en el parque?"
+    if st.button("¿por que me dejo por erika?", use_container_width=True):
+        st.session_state.question = "¿por que me dejo por erika?"
         st.rerun()
         
-    if st.button("¿Cuándo cantan los pájaros?", use_container_width=True):
-        st.session_state.question = "¿Cuándo cantan los pájaros?"
+    if st.button("¿Su mama me queria?", use_container_width=True):
+        st.session_state.question = "¿Su mama me queria?"
         st.rerun()
         
-    if st.button("¿Dónde suena la música alta?", use_container_width=True):
-        st.session_state.question = "¿Dónde suena la música alta?"
+    if st.button("¿Què me dijo su papà?", use_container_width=True):
+        st.session_state.question = "¿Què me dijo su papà?"
         st.rerun()
         
-    if st.button("¿Qué animal maúlla durante la noche?", use_container_width=True):
-        st.session_state.question = "¿Qué animal maúlla durante la noche?"
+    if st.button("¿Extraño a erika?", use_container_width=True):
+        st.session_state.question = "¿Extraño a erika?"
         st.rerun()
 
 # Actualizar pregunta si se seleccionó una sugerida
